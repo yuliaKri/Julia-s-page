@@ -14,7 +14,9 @@
     "lint": "eslint ./src --ext .js,.ts,.tsx",
     "lint:fix": "eslint --fix ./src --ext .js,.ts,.tsx",
     "p:check": "prettier --check ./src",
-    "p:format": "prettier --write ./src"
+    "p:format": "prettier --write ./src",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "author": "Julia",
   "license": "ISC",
@@ -66,7 +68,8 @@
     "typescript": "~5.4.5",
     "webpack": "~5.91.0",
     "webpack-cli": "~5.1.4",
-    "webpack-dev-server": "~5.0.4"
+    "webpack-dev-server": "~5.0.4",
+    "wrangler": "^4.114.0"
   },
   "engines": {
     "node": ">=22.0.0",
