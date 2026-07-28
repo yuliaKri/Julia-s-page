@@ -1,0 +1,20 @@
+# Dependencies and build output
+node_modules/
+build/
+coverage/
+
+# Local environment and Cloudflare Worker secrets
+.env
+.env.*
+!.env.example
+stock-notifier/.dev.vars
+stock-notifier/.dev.vars.*
+!stock-notifier/.dev.vars.example
+.wrangler/
+
+# Logs and local tooling
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

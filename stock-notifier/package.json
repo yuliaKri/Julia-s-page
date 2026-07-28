@@ -1,0 +1,14 @@
+{
+  "name": "stock-notifier",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test-trigger": "wrangler dev --test-scheduled"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0",
+    "typescript": "^5.4.0"
+  }
+}

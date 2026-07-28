@@ -1,0 +1,13 @@
+name = "stock-notifier"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Cron triggers: every 2 hours during US market hours (Mon-Fri)
+# 15:00, 17:00, 19:00, 21:00 UTC = 9:00 AM, 11:00 AM, 1:00 PM, 3:00 PM ET
+[triggers]
+crons = ["0 15,17,19,21 * * 1-5"]
+
+# Secrets (set via: wrangler secret put <NAME>)
+# FINNHUB_API_KEY  - your Finnhub API key
+# TELEGRAM_BOT_TOKEN - from @BotFather
+# TELEGRAM_CHAT_ID - your personal chat ID
