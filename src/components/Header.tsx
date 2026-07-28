@@ -43,16 +43,36 @@ const NavLink = styled(Link)`
   }
 `;
 
+const ExternalNavLink = styled.a`
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #ffffff;
+  }
+`;
+
+const financeAppUrl =
+  process.env.FINANCE_APP_URL || 'http://localhost:4200';
+
 export const Header: React.FC = () => {
   return (
     <Nav>
       <Logo to="/">Yulia Krivorotko</Logo>
       <NavLinks>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
         <NavLink to="/places">Places</NavLink>
         <NavLink to="/stocks">Stocks</NavLink>
         <NavLink to="/contact">Contact</NavLink>
+        <ExternalNavLink
+          href={financeAppUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          2755269 Alberta Inc. ↗
+        </ExternalNavLink>
       </NavLinks>
     </Nav>
   );
