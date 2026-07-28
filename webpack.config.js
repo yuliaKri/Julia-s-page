@@ -7,7 +7,7 @@ module.exports = {
   mode: 'development',
   devServer: {
     static: path.join(__dirname, 'build'),
-    port: 'auto',
+    port: 4201,
     host: 'localhost',
     historyApiFallback: true,
   },
