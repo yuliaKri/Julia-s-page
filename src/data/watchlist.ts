@@ -14,6 +14,7 @@ export const watchlist: Stock[] = [
   { symbol: 'AXTI', name: 'AXT Inc' },
   { symbol: 'CVX', name: 'Chevron' },
   { symbol: 'MSFT', name: 'Microsoft' },
+  { symbol: 'TSLA', name: 'Tesla' },
   { symbol: 'AMZN', name: 'Amazon' },
   { symbol: 'NFLX', name: 'Netflix' },
   { symbol: 'LMT', name: 'Lockheed Martin' },

@@ -17,7 +17,8 @@ Sochi, Gelendzhik, Nice, Paris, Marseille, Monaco, Frankfurt am Main, Kyiv, Lond
 Brighton, Astana, Bishkek, Odessa, Maui (Hawaii), Rostov-on-Don, Oryol, Smolensk,
 Vilnius, Rostock, Hamburg, Amsterdam, Kraków, Ras Al Khaimah, Saint Petersburg,
 Kananaskis Village, Edmonton, Revelstoke, Vernon, Penticton, Nanaimo, Tofino,
-Kimberley, Waterton.
+Kimberley, Waterton, Omsk, San Diego, Los Angeles, Grand Canyon, Long Beach,
+Coronado, Encinitas.
 
 RULES:
 - Only answer questions based on the information above.
