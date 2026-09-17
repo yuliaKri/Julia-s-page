@@ -54,8 +54,7 @@ const ExternalNavLink = styled.a`
   }
 `;
 
-const financeAppUrl =
-  process.env.FINANCE_APP_URL || 'http://localhost:4200';
+const corporationUrl = 'https://corporation.juliya-krivorotko.workers.dev/';
 
 export const Header: React.FC = () => {
   return (
@@ -67,7 +66,7 @@ export const Header: React.FC = () => {
         <NavLink to="/stocks">Stocks</NavLink>
         <NavLink to="/contact">Contact</NavLink>
         <ExternalNavLink
-          href={financeAppUrl}
+          href={corporationUrl}
           target="_blank"
           rel="noopener noreferrer"
         >

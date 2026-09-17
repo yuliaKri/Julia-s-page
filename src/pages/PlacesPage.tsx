@@ -15,6 +15,11 @@ const redIcon = new L.Icon({
   shadowSize: [30, 30],
 });
 
+const cartoApiKey = process.env.CARTO_API_KEY || '';
+const cartoTileUrl =
+  `https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png` +
+  `?key=${encodeURIComponent(cartoApiKey)}`;
+
 const PageWrapper = styled.main`
   min-height: 100vh;
   display: flex;
@@ -115,10 +120,10 @@ export const PlacesPage: React.FC = () => {
           worldCopyJump={false}
           style={{ height: '100%', minHeight: '500px' }}
         >
-          {/* Stadia Alidade Smooth Dark — readable dark map with visible labels */}
+          {/* CARTO dark basemap authenticated with the deployment API key. */}
           <TileLayer
-            attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>'
-            url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            url={cartoTileUrl}
             noWrap={true}
           />
           {places.map((place) => (
