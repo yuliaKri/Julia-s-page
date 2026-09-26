@@ -19,3 +19,6 @@ stock-notifier/.dev.vars.*
 Thumbs.db
 .idea/
 .vscode/
+
+.dev.vars*
+!.dev.vars.example
