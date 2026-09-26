@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { sendMessage, ChatMessage } from '../services/geminiService';
+import { sendMessage, ChatMessage } from '../services/chatService';
 
 /* ── Animations ── */
 const fadeIn = keyframes`
@@ -14,29 +14,44 @@ const pulse = keyframes`
 `;
 
 /* ── Styled Components ── */
-const Bubble = styled.button`
+const Bubble = styled.button<{ $isOpen: boolean }>`
   position: fixed;
   bottom: 28px;
   right: 28px;
   z-index: 1000;
-  width: 56px;
+  width: ${(p) => (p.$isOpen ? '56px' : 'auto')};
+  min-width: 56px;
   height: 56px;
-  border-radius: 50%;
+  padding: ${(p) => (p.$isOpen ? '0' : '0 20px')};
+  border-radius: 999px;
   border: none;
   background: linear-gradient(135deg, #a78bfa, #60a5fa);
   color: #fff;
-  font-size: 26px;
+  font-family: inherit;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(167, 139, 250, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 9px;
 
   &:hover {
     transform: scale(1.08);
     box-shadow: 0 6px 28px rgba(167, 139, 250, 0.55);
   }
+`;
+
+const BubbleIcon = styled.span`
+  font-size: 24px;
+  line-height: 1;
+`;
+
+const BubbleLabel = styled.span`
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
 `;
 
 const ChatWindow = styled.div`
@@ -190,7 +205,7 @@ const SendBtn = styled.button`
 export const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'assistant', text: "Hi! I'm Yulia's assistant. Ask me anything about her travels, work, or how to get in touch!" },
+    { role: 'assistant', text: "Hi! I'm Yulia's assistant. Ask me about her career, technical experience, travels, or how to get in touch!" },
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -249,8 +264,20 @@ export const ChatWidget: React.FC = () => {
           </InputArea>
         </ChatWindow>
       )}
-      <Bubble onClick={() => setIsOpen((o) => !o)} title="Chat with Yulia's assistant">
-        {isOpen ? '✕' : '💬'}
+      <Bubble
+        type="button"
+        $isOpen={isOpen}
+        onClick={() => setIsOpen((o) => !o)}
+        aria-label={isOpen ? 'Close chat' : "Open Yulia's Assistant"}
+      >
+        {isOpen ? (
+          <BubbleIcon aria-hidden="true">✕</BubbleIcon>
+        ) : (
+          <>
+            <BubbleIcon aria-hidden="true">💬</BubbleIcon>
+            <BubbleLabel>Yulia's Assistant</BubbleLabel>
+          </>
+        )}
       </Bubble>
     </>
   );

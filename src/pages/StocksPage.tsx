@@ -16,25 +16,25 @@ const shimmer = keyframes`
 
 /* ── Styled Components ── */
 const PageWrapper = styled.main`
-  min-height: 100vh;
-  padding: 120px 48px 80px;
+  min-height: calc(100svh - 190px);
+  padding: 100px 32px 40px;
   background:
     radial-gradient(ellipse at 50% 20%, rgba(29, 78, 137, 0.15) 0%, transparent 50%),
     linear-gradient(180deg, #0a0a0a 0%, #111118 100%);
 `;
 
 const Container = styled.div`
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 `;
 
 const TitleBar = styled.div`
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 22px;
 `;
 
 const Title = styled.h1`
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
   letter-spacing: -1px;
   color: #ffffff;
@@ -51,12 +51,12 @@ const LastUpdated = styled.p`
   font-size: 13px;
   color: rgba(255, 255, 255, 0.3);
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 `;
 
 const RefreshBtn = styled.button`
   display: block;
-  margin: 0 auto 32px;
+  margin: 0 auto 20px;
   padding: 8px 20px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -79,15 +79,15 @@ const RefreshBtn = styled.button`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
 `;
 
 const Card = styled.div`
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  padding: 20px;
+  padding: 14px;
   animation: ${fadeIn} 0.3s ease;
   transition: border-color 0.2s;
   cursor: pointer;
@@ -101,11 +101,11 @@ const CardHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 `;
 
 const SymbolLabel = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #ffffff;
 `;
@@ -118,7 +118,7 @@ const CompanyName = styled.div`
 `;
 
 const Price = styled.div`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   color: #ffffff;
   text-align: right;
@@ -134,8 +134,8 @@ const Change = styled.div<{ $positive: boolean }>`
 const StatsRow = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 14px;
-  padding-top: 12px;
+  margin-top: 9px;
+  padding-top: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 `;
 
@@ -153,7 +153,7 @@ const StatLabel = styled.div`
 `;
 
 const StatValue = styled.div`
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.75);
 `;
@@ -162,8 +162,8 @@ const SkeletonCard = styled.div`
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  padding: 20px;
-  height: 150px;
+  padding: 14px;
+  height: 126px;
   overflow: hidden;
 
   &::after {
@@ -184,7 +184,7 @@ const SkeletonCard = styled.div`
 
 const NoKeyMsg = styled.div`
   text-align: center;
-  padding: 60px 20px;
+  padding: 36px 20px;
   color: rgba(255, 255, 255, 0.5);
   font-size: 16px;
   line-height: 1.7;
@@ -199,8 +199,8 @@ const ExchangeRateCard = styled.div`
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  padding: 20px 28px;
-  margin-bottom: 32px;
+  padding: 14px 24px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;

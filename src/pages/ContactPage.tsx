@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const PageWrapper = styled.main`
-  min-height: 100vh;
-  padding: 140px 48px 80px;
+  min-height: calc(100svh - 190px);
+  padding: 116px 48px 46px;
   background:
     radial-gradient(ellipse at 70% 40%, rgba(29, 78, 137, 0.2) 0%, transparent 50%),
     linear-gradient(180deg, #0a0a0a 0%, #111118 100%);
@@ -31,12 +31,18 @@ const Text = styled.p`
 `;
 
 const EmailLink = styled.a`
-  color: #a78bfa;
+  color: transparent;
+  background-image: linear-gradient(90deg, #e879a5 50%, #a78bfa 50%);
+  background-position: 100%;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
   font-weight: 500;
-  transition: opacity 0.2s ease;
+  transition: background-position 0.5s linear;
 
-  &:hover {
-    opacity: 0.8;
+  &:hover,
+  &:focus-visible {
+    background-position: 0;
   }
 `;
 

@@ -21,14 +21,14 @@ const cartoTileUrl =
   `?key=${encodeURIComponent(cartoApiKey)}`;
 
 const PageWrapper = styled.main`
-  min-height: 100vh;
+  min-height: calc(100svh - 190px);
   display: flex;
   flex-direction: column;
   background: #0a0a0a;
 `;
 
 const TitleBar = styled.div`
-  padding: 100px 48px 24px;
+  padding: 94px 32px 18px;
   text-align: center;
 `;
 
@@ -47,16 +47,16 @@ const Subtitle = styled.p`
 `;
 
 const MapWrapper = styled.div`
-  flex: 1;
-  min-height: 500px;
-  margin: 0 48px 48px;
+  height: clamp(320px, 48vh, 460px);
+  min-height: 320px;
+  margin: 0 32px 32px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   .leaflet-container {
     height: 100%;
-    min-height: 500px;
+    min-height: 320px;
     background: #0a0a0a;
   }
 
@@ -118,7 +118,7 @@ export const PlacesPage: React.FC = () => {
           maxBoundsViscosity={1.0}
           scrollWheelZoom={true}
           worldCopyJump={false}
-          style={{ height: '100%', minHeight: '500px' }}
+          style={{ height: '100%', minHeight: '320px' }}
         >
           {/* CARTO dark basemap authenticated with the deployment API key. */}
           <TileLayer

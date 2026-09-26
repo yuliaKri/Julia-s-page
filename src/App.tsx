@@ -7,6 +7,7 @@ import { ContactPage } from './pages/ContactPage';
 import { PlacesPage } from './pages/PlacesPage';
 import { StocksPage } from './pages/StocksPage';
 import { ChatWidget } from './components/ChatWidget';
+import { Footer } from './components/Footer';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <Route path="/stocks" component={StocksPage} />
         <Route path="/contact" component={ContactPage} />
       </Switch>
+      <Footer />
       <ChatWidget />
     </Router>
   );

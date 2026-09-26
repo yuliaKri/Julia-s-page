@@ -10,7 +10,7 @@
     "test": "jest --coverage --config=jest.unit.config.js",
     "test:watch": "jest --watch --collect-coverage --config=jest.unit.config.js",
     "clean": "rm -rf build",
-    "compile": "tsc",
+    "compile": "tsc --noEmit",
     "lint": "eslint ./src --ext .js,.ts,.tsx",
     "lint:fix": "eslint --fix ./src --ext .js,.ts,.tsx",
     "p:check": "prettier --check ./src",

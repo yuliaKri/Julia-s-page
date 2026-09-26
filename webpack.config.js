@@ -16,6 +16,7 @@ module.exports = {
     poll: 1000,
   },
   output: {
+    clean: true,
     publicPath: '/',
     filename: '[name].[contenthash].js',
     chunkFilename: '[id].[contenthash].js',
