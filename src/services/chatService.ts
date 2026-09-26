@@ -10,7 +10,7 @@ interface ChatResponse {
 
 const DEFAULT_CHAT_API_URL =
   process.env.NODE_ENV === 'production'
-    ? 'https://yulia-chat-api.juliya-krivorotko.workers.dev/'
+    ? 'https://assistant.juliya-krivorotko.workers.dev/'
     : 'http://127.0.0.1:8787';
 const CHAT_API_URL = process.env.CHAT_API_URL || DEFAULT_CHAT_API_URL;
 
