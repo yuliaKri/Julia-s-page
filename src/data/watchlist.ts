@@ -19,5 +19,4 @@ export const watchlist: Stock[] = [
   { symbol: 'NFLX', name: 'Netflix' },
   { symbol: 'LMT', name: 'Lockheed Martin' },
   { symbol: 'AEM', name: 'Agnico Eagle Mines' },
-  { symbol: 'CCJ', name: 'Cameco Corp' },
 ];
