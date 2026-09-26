@@ -27,7 +27,7 @@ describe('chatService', () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
 
     const [url, options] = fetchMock.mock.calls[0] as [string, RequestInit];
-    expect(url).toBe('http://127.0.0.1:8787');
+    expect(url).toBe('https://assistant.juliya-krivorotko.workers.dev/');
     expect(options.method).toBe('POST');
     expect(JSON.parse(options.body as string)).toEqual({
       history: [{ role: 'assistant', text: 'How can I help?' }],

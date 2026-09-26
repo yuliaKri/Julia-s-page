@@ -8,10 +8,7 @@ interface ChatResponse {
   error?: string;
 }
 
-const DEFAULT_CHAT_API_URL =
-  process.env.NODE_ENV === 'production'
-    ? 'https://assistant.juliya-krivorotko.workers.dev/'
-    : 'http://127.0.0.1:8787';
+const DEFAULT_CHAT_API_URL = 'https://assistant.juliya-krivorotko.workers.dev/';
 const CHAT_API_URL = process.env.CHAT_API_URL || DEFAULT_CHAT_API_URL;
 
 export async function sendMessage(
