@@ -11,6 +11,7 @@ coverage/
 stock-notifier/.dev.vars
 stock-notifier/.dev.vars.*
 !stock-notifier/.dev.vars.example
+chat-api/
 .wrangler/
 
 # Logs and local tooling
