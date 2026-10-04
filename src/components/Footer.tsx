@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { socialProfiles } from '../data/socialProfiles';
 
 const FooterShell = styled.footer`
   position: relative;
@@ -17,11 +18,24 @@ const FooterInner = styled.div`
   margin: 0 auto;
 `;
 
+const FooterIntro = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 14px;
+
+  @media (max-width: 520px) {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+`;
+
 const ConnectLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: 24px;
-  margin-bottom: 14px;
   font-family: Georgia, 'Times New Roman', serif;
 
   strong {
@@ -64,6 +78,30 @@ const ConnectLink = styled(Link)`
   &:hover span,
   &:focus-visible span {
     background-position: 0;
+  }
+`;
+
+const FooterProfiles = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 18px;
+`;
+
+const FooterProfileLink = styled.a`
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: #ffffff;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #a78bfa;
+    outline-offset: 4px;
   }
 `;
 
@@ -125,10 +163,28 @@ const Copyright = styled.p`
 export const Footer: React.FC = () => (
   <FooterShell>
     <FooterInner>
-      <ConnectLink to="/contact">
-        <strong>Let's Connect</strong>
-        <span aria-hidden="true" />
-      </ConnectLink>
+      <FooterIntro>
+        <ConnectLink to="/contact">
+          <strong>Let's Connect</strong>
+          <span aria-hidden="true" />
+        </ConnectLink>
+        <FooterProfiles aria-label="Professional profiles">
+          <FooterProfileLink
+            href={socialProfiles.linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </FooterProfileLink>
+          <FooterProfileLink
+            href={socialProfiles.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </FooterProfileLink>
+        </FooterProfiles>
+      </FooterIntro>
 
       <FooterDetails>
         <FooterBrand to="/">YULIA</FooterBrand>

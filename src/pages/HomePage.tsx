@@ -4,6 +4,7 @@ import aerLogo from '../assets/logos/aer.png';
 import bayerLogo from '../assets/logos/bayer.svg';
 import lodgeLinkLogo from '../assets/logos/lodgelink.svg';
 import verbLogo from '../assets/logos/verb.svg';
+import { socialProfiles } from '../data/socialProfiles';
 
 const gradientShift = keyframes`
   0% { background-position: 0% 50%; }
@@ -71,6 +72,47 @@ const Subtitle = styled.p`
   font-size: clamp(16px, 2vw, 20px);
   font-weight: 300;
   line-height: 1.65;
+`;
+
+const ProfileLinks = styled.nav`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+`;
+
+const ProfileLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: #ffffff;
+    border-color: rgba(167, 139, 250, 0.7);
+    background: rgba(167, 139, 250, 0.12);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #a78bfa;
+    outline-offset: 3px;
+  }
 `;
 
 const CompaniesSection = styled.section`
@@ -231,6 +273,22 @@ export const HomePage: React.FC = () => {
         <Subtitle>
           Turning ideas into elegant, high-performance digital experiences.
         </Subtitle>
+        <ProfileLinks aria-label="Professional profiles">
+          <ProfileLink
+            href={socialProfiles.linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn <span aria-hidden="true">↗</span>
+          </ProfileLink>
+          <ProfileLink
+            href={socialProfiles.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub <span aria-hidden="true">↗</span>
+          </ProfileLink>
+        </ProfileLinks>
       </Content>
 
       <CompaniesSection aria-labelledby="companies-title">
